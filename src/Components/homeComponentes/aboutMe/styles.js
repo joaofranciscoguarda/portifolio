@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -18,7 +19,7 @@ export const AboutMeSection = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 767px) {
-    height: 90vh;
+    height: 110vh;
     width: 100vw;
     flex-direction: column;
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  height: fit-content;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +21,6 @@ export const ProjectsSection = styled.div`
   flex-direction: row;
 
   @media screen and (max-width: 767px) {
-
     width: 100vw;
     justify-content: center;
   }
@@ -59,7 +59,7 @@ export const CardProject = styled.div`
 
   &:hover {
     transform: scale(1.02);
-    transition: ease-in-out .5s;
+    transition: ease-in-out 0.5s;
 
     border: 1px solid ${({ hoverColor }) => hoverColor};
     color: ${({ hoverColor }) => hoverColor};

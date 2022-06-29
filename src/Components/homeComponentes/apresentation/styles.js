@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 

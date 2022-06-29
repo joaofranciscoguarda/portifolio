@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -18,7 +19,7 @@ export const TechsSection = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 767px) {
-    height: 90vh;
+    height: fit-content;
     width: 100vw;
     flex-direction: column;
 
@@ -56,7 +57,7 @@ export const TechsCard = styled.ul`
     font-weight: 900;
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -84,7 +85,6 @@ export const TechsItems = styled.li`
   }
 
   svg {
-    
     width: 32px;
     font-size: 32px;
     margin-left: 15px;

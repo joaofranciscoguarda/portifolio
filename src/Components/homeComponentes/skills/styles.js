@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -43,7 +44,7 @@ export const SkillsCard = styled.ul`
   color: ${({ color }) => color};
   width: 90%;
   height: 500px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +59,7 @@ export const SkillsCard = styled.ul`
     font-weight: 900;
   }
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -76,8 +77,6 @@ export const SkillsItems = styled.li`
   p {
     margin-left: 15px;
   }
-
-  
 
   svg {
     width: 40px;
