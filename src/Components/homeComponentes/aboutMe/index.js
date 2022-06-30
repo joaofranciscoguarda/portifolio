@@ -24,12 +24,9 @@ function AboutMe() {
             Acredito que "Se alguem foi capaz de escrever do algo tão magnífico
             do absoluto nada, o meu dever é no mínimo entender o que aquele
             sujeito escreveu", Clóvis de Barros Filho.
-            <br></br>E pretendo ser esse a pessoa que vai contruir para a
-            comunidade e as empresas!
+            <br></br>Me proponho a entender tudo que estudo e pretendo ser
+            aquele que vai contribuir para a comunidade!
           </p>
-          <CTAButton id='contact' href="mailto:joaofrancisco.guarda@gmail.com">
-            joaofrancisco.guarda@gmail.com
-          </CTAButton>
           <FakeHTML text="</p>" />
         </AboutMeText>
       </AboutMeSection>

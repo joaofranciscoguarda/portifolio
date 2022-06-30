@@ -27,10 +27,6 @@ function Skills() {
           <SkillsCard color="var(--primary)">
             <h3>Soft Skills</h3>
             <SkillsItems>
-              <FontAwesomeIcon icon={faBugSlash} />
-              <p>Aprender a aprender com erros</p>
-            </SkillsItems>
-            <SkillsItems>
               <FontAwesomeIcon icon={faToolbox} />
               <p>Autonomia</p>
             </SkillsItems>
@@ -40,7 +36,7 @@ function Skills() {
             </SkillsItems>
             <SkillsItems>
               <FontAwesomeIcon icon={faCalendarCheck} />
-              <p>Responsavel e proativo</p>
+              <p>Responsável e proativo</p>
             </SkillsItems>
           </SkillsCard>
 

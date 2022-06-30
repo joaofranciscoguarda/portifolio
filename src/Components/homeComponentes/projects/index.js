@@ -71,6 +71,9 @@ function Project() {
           <FakeHTML text="</div>" />
         </CardsForFakeHtml>
       </ProjectsSection>
+        <CTAButton color='var(--secundary)' hoverColor='var(--primary)' id="contact" href="mailto:joaofrancisco.guarda@gmail.com">
+            Entre em contato comigo
+          </CTAButton>
       <FakeHTML text="</section>" />
     </Container>
   );
