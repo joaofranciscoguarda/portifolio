@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url('/fonts/BebasNeue-Regular.ttf') format('truetype');
+  }
+}
+
+body {
+  background-color: black;
+}
+.radar-chart {
+  animation: rotate 300s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.grid-line {
+  stroke: #464646;
+  fill: none;
+}
+
+.axis {
+  stroke: #464646;
+}
+.data-line {
+  stroke: #fcbd27;
+  fill: none;
+}
+.data-point {
+  fill: #fcbd27;
+}
+.data-label {
+  fill: white;
+  font-size: 10px;
+  text-anchor: middle;
+}

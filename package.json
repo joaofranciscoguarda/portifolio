@@ -1,53 +1,29 @@
 {
   "name": "portifolio",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-regular-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "@mui/material": "^5.8.5",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "babel-plugin-macros": "^3.1.0",
-    "font-awesome": "^4.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-toastify": "^9.0.5",
-    "styled-components": "^5.3.5",
-    "swiper": "^8.2.4",
-    "typewriter-effect": "^2.18.2",
-    "web-vitals": "^2.1.0"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "solid-js": "^1.8.20",
+    "tailwindcss-animate": "^1.0.7",
+    "theme-change": "^2.5.0",
+    "vite-tsconfig-paths": "^5.0.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.5.4",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vite-plugin-solid": "^2.10.2",
+    "vite-plugin-solid-svg": "^0.8.1"
   }
 }

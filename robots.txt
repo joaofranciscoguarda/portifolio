@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /cache/
+Disallow: /uploads/
+Disallow: /scripts/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://www.example.com/sitemap.xml
