@@ -1,22 +1,23 @@
-import { createSignal } from 'solid-js'
-import { Radar } from './chart';
-import { Icon } from '@/Icons';
-import { onMount } from 'solid-js'
-import { themeChange } from 'theme-change'
-onMount(async () => {
-  themeChange();
-})
-
+import { createResource, createSignal, Show, Suspense } from "solid-js";
+import { Radar } from "./chart";
+import { Icon } from "@/Icons";
+import { fetchDictionary, Locale } from "./i18n";
+import * as i18n from "@solid-primitives/i18n";
 function App() {
-  const [count, setCount] = createSignal(0)
+  const [locale, setLocale] = createSignal<Locale>("en_US");
+  const [dict] = createResource(locale, fetchDictionary);
+
+  const t = i18n.translator(dict);
 
   return (
-    <>
-    <button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" class='text-white'>Mudar</button>
-    <Radar/>
-    <Icon icon='pintas'/>
-    </>
-  )
+    <Suspense>
+      <Show when={dict()}>
+        <h1>{t("hero.hi")}</h1>
+        <Radar />
+        <Icon icon="pintas" />
+      </Show>
+    </Suspense>
+  );
 }
 
-export default App
+export default App;
