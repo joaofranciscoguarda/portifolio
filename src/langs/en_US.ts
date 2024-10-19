@@ -1,7 +1,4 @@
-import { general } from "./general";
-
 export const dict = {
-    ...general,
     inputs: {
         name: "Name",
         email: "Email",
