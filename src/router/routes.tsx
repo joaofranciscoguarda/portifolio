@@ -7,6 +7,10 @@ export const routes: RouteDefinition[] = [
         component: lazy(() => import("@/modules/home")),
     },
     {
+        path: "/dict",
+        component: lazy(() => import("@/modules/dictionary")),
+    },
+    {
         path: "*",
         component: () => <Navigate href="/" />,
     },

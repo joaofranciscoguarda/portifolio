@@ -1,0 +1,62 @@
+@import "fonts.css";
+@import "colors.css";
+@import "typography.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply text-foreground min-w-[100dvw] min-h-[100dvh] from-[#0a0702] from-[50%] to-[#272727] to-[84%] bg-gradient-to-br;
+    }
+
+    h1 {
+        @apply text-h1;
+    }
+    h2 {
+        @apply text-h2;
+    }
+    h3 {
+        @apply text-h3;
+    }
+    p {
+        @apply text-p;
+    }
+    a {
+        @apply text-p text-primary hover:text-yellow-700;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.grid-line {
+    stroke: #464646;
+    fill: none;
+}
+
+.axis {
+    stroke: #464646;
+}
+.data-line {
+    stroke: #fcbd27;
+    fill: none;
+}
+.data-point {
+    fill: #fcbd27;
+}
+.data-label {
+    fill: white;
+    font-size: 10px;
+    text-anchor: middle;
+}

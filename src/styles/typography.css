@@ -1,0 +1,19 @@
+.text-h1 {
+    @apply text-[3.5rem] lg:text-[6.25rem] font-bebas leading-tight;
+}
+
+.text-h2 {
+    @apply text-[2.625rem] lg:text-[4.75rem] font-bebas;
+}
+
+.text-h3 {
+    @apply text-[1.5rem] font-manrope lg:text-[2rem];
+}
+
+.text-p {
+    @apply text-base font-manrope text-[1rem] lg:text-[1.25rem];
+}
+
+.text-a {
+    @apply text-base font-manrope text-[1rem] lg:text-[1.25rem] text-primary hover:text-yellow-700;
+}
