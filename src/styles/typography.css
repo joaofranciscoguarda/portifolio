@@ -1,9 +1,9 @@
 .text-h1 {
-    @apply text-[3.5rem] lg:text-[6.25rem] font-bebas leading-tight;
+    @apply text-[3.5rem] sm:text-[4.5rem] lg:text-[6.25rem] font-bebas leading-tight;
 }
 
 .text-h2 {
-    @apply text-[2.625rem] lg:text-[4.75rem] font-bebas;
+    @apply text-[2.625rem] lg:text-[4.75rem] font-bebas leading-tight;
 }
 
 .text-h3 {
