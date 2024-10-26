@@ -1,49 +1,55 @@
-import { For } from "solid-js";
+import { createEffect, For } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
 const map = [
     {
-        h1: ["primary", "secondary", "muted", "accent"],
-        h2: ["primary", "secondary", "muted", "accent"],
-        h3: ["primary", "secondary", "muted", "accent"],
-        p: ["primary", "secondary", "muted", "accent"],
-        a: ["primary", "secondary", "muted", "accent"],
+        h1: ["text-primary", "text-secondary", "text-muted", "text-accent"],
+        h2: ["text-primary", "text-secondary", "text-muted", "text-accent"],
+        h3: ["text-primary", "text-secondary", "text-muted", "text-accent"],
+        p: ["text-primary", "text-secondary", "text-muted", "text-accent"],
+        a: ["text-primary", "text-secondary", "text-muted", "text-accent"],
     },
     {
-        h1: ["grey-100", "grey-500", "grey-900"],
-        h2: ["grey-100", "grey-200", "grey-500", "grey-800", "grey-900"],
+        h1: ["text-grey-100", "text-grey-500", "text-grey-900"],
+        h2: [
+            "text-grey-100",
+            "text-grey-200",
+            "text-grey-500",
+            "text-grey-800",
+            "text-grey-900",
+        ],
         h3: [
-            "grey-100",
-            "grey-200",
-            "grey-300",
-            "grey-400",
-            "grey-500",
-            "grey-600",
-            "grey-700",
-            "grey-800",
-            "grey-900",
+            "text-grey-100",
+            "text-grey-200",
+            "text-grey-300",
+            "text-grey-400",
+            "text-grey-500",
+            "text-grey-600",
+            "text-grey-700",
+            "text-grey-800",
+            "text-grey-900",
         ],
         p: [
-            "grey-100",
-            "grey-200",
-            "grey-300",
-            "grey-400",
-            "grey-500",
-            "grey-600",
-            "grey-700",
-            "grey-800",
-            "grey-900",
+            "text-grey-100",
+            "text-grey-200",
+            "text-grey-300",
+            "text-grey-400",
+            "text-grey-500",
+            "text-grey-600",
+            "text-grey-700",
+            "text-grey-800",
+            "text-grey-900",
         ],
         a: [
-            "grey-100",
-            "grey-200",
-            "grey-300",
-            "grey-400",
-            "grey-500",
-            "grey-600",
-            "grey-700",
-            "grey-800",
-            "grey-900",
+            "text-grey-100",
+            "text-grey-200",
+            "text-grey-300",
+            "text-grey-400",
+            "text-grey-500",
+            "text-grey-600",
+            "text-grey-700",
+            "text-grey-800",
+            "text-grey-900",
         ],
     },
 ] as const;
@@ -52,6 +58,7 @@ type fontMap = (typeof map)[number]; // Adjust to iterate over array elements
 type keys = keyof fontMap;
 
 export function Fonts() {
+    createEffect(() => console.log(map));
     return (
         <div class="flex flex-col gap-20">
             <For each={map}>
@@ -65,14 +72,15 @@ export function Fonts() {
                                         <Dynamic component={key}>{key}</Dynamic>
                                         <For each={mapEntry[key]}>
                                             {(color) => {
-                                                const className = `
-                                                    text-${color}`;
                                                 return (
                                                     <Dynamic
                                                         component={key}
-                                                        class={className}
+                                                        class={color}
                                                     >
-                                                        {color}
+                                                        {color.replace(
+                                                            "text-",
+                                                            "",
+                                                        )}
                                                     </Dynamic>
                                                 );
                                             }}

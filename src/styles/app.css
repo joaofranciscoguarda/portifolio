@@ -7,6 +7,9 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        @apply bg-background;
+    }
     * {
         @apply border-border;
     }

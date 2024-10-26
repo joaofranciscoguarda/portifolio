@@ -1,4 +1,4 @@
-import { onCleanup, onMount } from "solid-js";
+import { onMount } from "solid-js";
 
 export function Radar() {
     let svgRef: SVGSVGElement;
@@ -68,7 +68,7 @@ export function Radar() {
             }
 
             // Draw axes and data points for this list of values
-            let previousPoint = null;
+            let previousPoint: any;
             values.forEach((value, i) => {
                 const valueRadius = (totalRadius / numLevels) * value; // Get the radius based on the value
                 const angle =
