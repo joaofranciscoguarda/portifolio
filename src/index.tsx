@@ -6,7 +6,4 @@ import App from "./App";
 
 const root = document.getElementById("root");
 
-root?.classList.add("flex");
-root?.classList.add("flex-col");
-
 render(() => <App />, root!);

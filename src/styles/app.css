@@ -11,7 +11,7 @@
         @apply border-border;
     }
     body {
-        @apply text-foreground min-w-[100dvw] min-h-[100dvh] from-[#0a0702] from-[50%] to-[#272727] to-[84%] bg-gradient-to-br;
+        @apply text-foreground from-[#0a0702] from-[50%] to-[#272727] to-[84%] bg-gradient-to-br pb-64;
     }
 
     h1 {
@@ -27,7 +27,7 @@
         @apply text-p;
     }
     a {
-        @apply text-p text-primary hover:text-yellow-700;
+        @apply text-p;
     }
 }
 

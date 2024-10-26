@@ -1,4 +1,4 @@
-import { BaseLayout } from "@/layouts/base.layout";
+import { BaseLayout } from "@/layouts";
 import { Navigate, RouteDefinition } from "@solidjs/router";
 import { lazy } from "solid-js";
 
