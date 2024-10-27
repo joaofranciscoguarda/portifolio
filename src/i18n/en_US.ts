@@ -18,7 +18,7 @@ export const dict = {
     hero: {
         hi: "Hi, I'm",
         myName: "João Francisco",
-        andIm: "and I'm a Full Stacj Developer",
+        andIm: "and I'm a Full Stack Developer",
     },
     myCapabilities: {
         head: "My Capabilities",

@@ -2,6 +2,7 @@ import { createResource, Show } from "solid-js";
 
 interface IconProps {
     icon: string;
+    class?: string;
 }
 
 export function Icon(props: IconProps) {
@@ -20,8 +21,8 @@ export function Icon(props: IconProps) {
     );
 
     return (
-        <Show when={lazyIcon()} fallback={<div>A fallback here</div>}>
-            {(LoadedIcon) => <div>{LoadedIcon()}</div>}
+        <Show when={lazyIcon()} fallback={<div>icon</div>}>
+            {(LoadedIcon) => <div class={props.class}>{LoadedIcon()}</div>}
         </Show>
     );
 }

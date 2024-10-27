@@ -6,7 +6,11 @@ import { SelectLang } from "@/components/features/select-lang";
 export function BaseHeader() {
     return (
         <div class="flex items-center justify-between px-10 min-h-[96px] sticky top-0 backdrop-blur-sm">
-            <p class="font-bebas text-[2rem]">{t("hero.myName")}</p>
+            <A href="/">
+                <p class="font-bebas text-[2rem] lg:text-[2.5rem]">
+                    {t("hero.myName")}
+                </p>
+            </A>
             <div class="flex items-center gap-5 justify-end min-w-[35%]">
                 {import.meta.env.DEV && (
                     <A href="/dict">

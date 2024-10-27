@@ -21,12 +21,13 @@ export const buttonVariants = cva(
                 secondary:
                     "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
                 ghost: "hover:bg-accent hover:text-accent-foreground",
-                link: "text-primary underline-offset-4 hover:underline",
+                link: "underline-offset-4 hover:underline",
             },
             size: {
-                default: "h-12 px-4 py-2 text-md min-w-16",
+                default: "h-9 px-4 py-2 text-sm lg:text-base xl:text-lg",
                 sm: "h-8 rounded-md px-3 text-xs",
-                lg: "h-10 rounded-md px-8",
+                lg: "h-10 rounded-md px-8 text-base",
+                xl: "h-[54px] min-w-56 rounded-full text-base lg:text-lg",
                 icon: "h-9 w-9",
             },
         },

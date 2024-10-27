@@ -8,13 +8,15 @@
 
 @layer base {
     html {
-        @apply bg-background;
+        @apply scroll-smooth;
     }
     * {
         @apply border-border;
     }
     body {
-        @apply text-foreground from-[#0a0702] from-[50%] to-[#272727] to-[84%] bg-gradient-to-br pb-64;
+        @apply text-foreground overflow-x-hidden
+        min-h-[100dvh] from-[#0a0702] from-[50%]
+        to-[#272727] to-[84%] bg-gradient-to-br pb-64;
     }
 
     h1 {
