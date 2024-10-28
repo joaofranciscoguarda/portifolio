@@ -27,15 +27,15 @@ export function Hero() {
             <div class="flex flex-col justify-center group relative h-fit">
                 <Icon
                     icon="pintas"
-                    class="absolute -z-10 -top-44 right-96 opacity-5 group-hover:opacity-100"
+                    class="absolute -z-10 -top-44 right-96 opacity-5 group-hover:opacity-75 transition"
                 />
                 <img
                     src={me}
-                    class="z-10 static grayscale brightness-50 opacity-75 group-hover:brightness-100 group-hover:grayscale-0 group-hover:opacity-100"
+                    class="z-10 static transition duration-700 grayscale brightness-[0.3] group-hover:brightness-100 group-hover:grayscale-0 group-hover:opacity-100"
                 />
                 <Icon
                     icon="pintas"
-                    class="absolute -z-10 -bottom-52 -right-60 opacity-5 group-hover:opacity-100"
+                    class="rotate-[200deg] absolute transition duration-500 delay-150 -z-10 -bottom-64 -right-80 opacity-5 group-hover:opacity-75"
                 />
             </div>
         </div>
