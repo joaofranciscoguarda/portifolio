@@ -34,6 +34,9 @@
     a {
         @apply text-p;
     }
+    .container {
+        @apply overflow-hidden sm:px-[2rem];
+    }
 }
 
 @keyframes rotate {
