@@ -11,7 +11,7 @@ export function Icon(props: IconProps) {
         async (iconName) => {
             try {
                 const lazyFile = await import(
-                    `./assets/icons/${iconName}.svg?component-solid`
+                    `../../assets/icons/${iconName}.svg?component-solid`
                 );
                 return lazyFile.default;
             } catch {
@@ -21,7 +21,7 @@ export function Icon(props: IconProps) {
     );
 
     return (
-        <Show when={lazyIcon()} fallback={<div>icon</div>}>
+        <Show when={lazyIcon()} fallback={<div>failed to import icon</div>}>
             {(LoadedIcon) => <div class={props.class}>{LoadedIcon()}</div>}
         </Show>
     );

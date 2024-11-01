@@ -11,6 +11,7 @@ export const dict = {
     buttons: {
         work: "Trabajo",
         about: "Acerca de",
+        skills: "Habilidades", //corrgir
         contact: "Contacto",
         submit: "Enviar",
         contactMe: "Contáctame",

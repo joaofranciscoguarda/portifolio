@@ -1,5 +1,12 @@
 import { onMount } from "solid-js";
 
+interface SkillsGraphProps {
+    data: {
+        points: number;
+        icon: string;
+    }[];
+}
+
 export function Radar() {
     let svgRef: SVGSVGElement;
 
@@ -85,7 +92,7 @@ export function Radar() {
                 );
                 point.setAttribute("cx", x.toString());
                 point.setAttribute("cy", y.toString());
-                point.setAttribute("r", "3"); // Radius of the data point
+                point.setAttribute("r", "2"); // Radius of the data point
                 point.setAttribute("class", "data-point");
                 svg.appendChild(point);
 

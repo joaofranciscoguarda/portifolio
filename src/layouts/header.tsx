@@ -21,6 +21,9 @@ export function BaseHeader() {
                     <A href="#work">
                         <Button variant={"link"}>{t("buttons.work")}</Button>
                     </A>
+                    <A href="#skills">
+                        <Button variant={"link"}>{t("buttons.skills")}</Button>
+                    </A>
                     <A href="#about">
                         <Button variant={"link"}>{t("buttons.about")}</Button>
                     </A>
