@@ -5,12 +5,12 @@ import { Contact } from "./sections/contact";
 
 export function Home() {
     return (
-        <div class="w-full flex flex-col">
+        <>
             <Hero />
             <MyCapabilities />
             <AboutMe />
             <Contact />
-        </div>
+        </>
     );
 }
 
