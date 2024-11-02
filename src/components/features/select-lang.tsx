@@ -11,6 +11,7 @@ import { Locale } from "@/plugins/i18n";
 export function SelectLang() {
     return (
         <Select<Locale>
+            class="border-accent border-[1px] rounded-md text-primary"
             options={["en_US", "pt_BR", "es_ES"]}
             placeholder={t(`locale.${locale()}`)}
             itemComponent={(props) => (

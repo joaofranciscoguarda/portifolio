@@ -9,7 +9,7 @@ export function Hero() {
     const screen = breakPoints;
 
     return (
-        <HomeSection class="-mt-14 pb-20 md:my-0">
+        <HomeSection class="-mt-14 pb-20 px-4 md:my-0">
             <div class="flex flex-col md:flex-row relative items-center">
                 <Show when={screen.md}>
                     <HiIm />
@@ -24,7 +24,7 @@ export function Hero() {
                     />
                     <img
                         src={me}
-                        class={`w-[90%] min-w-[375px] max-w-[600px] z-10 static transition duration-700 grayscale brightness-[0.3] group-hover:brightness-100 group-hover:grayscale-0 group-hover:opacity-100`}
+                        class={`w-[90%] min-w-[357px] max-w-[600px] z-10 static transition duration-700 grayscale brightness-[0.3] group-hover:brightness-100 group-hover:grayscale-0 group-hover:opacity-100`}
                     />
                     <Icon
                         icon="pintas"

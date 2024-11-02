@@ -9,6 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@corvu/drawer": "^0.2.2",
         "@kobalte/core": "^0.13.7",
         "@solid-primitives/i18n": "^2.1.1",
         "@solid-primitives/media": "^2.2.9",

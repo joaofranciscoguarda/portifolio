@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { SelectLang } from "@/components/features/select-lang";
 import { breakPoints } from "@/hooks";
 import { Show } from "solid-js";
+import {
+    Drawer,
+    DrawerContent,
+    DrawerTrigger,
+    useDialogContext,
+    useDrawerContext,
+} from "@/components/ui/drawer";
 
 export function BaseHeader() {
     const screen = breakPoints;
@@ -13,40 +20,74 @@ export function BaseHeader() {
             <div class="container flex items-center justify-between h-[96px]">
                 <A href="/">
                     <p class="font-bebas text-[2rem] lg:text-[2.5rem]">
-                        {!screen.md ? "<JF/>" : `<${t("hero.myName")}/>`}
+                        {`<${t("hero.myName")}/>`}
                     </p>
                 </A>
-                <Show when={screen.lg}>
-                    <div class="flex flex-col lg:flex-row items-center gap-5 justify-end min-w-[35%]">
-                        {import.meta.env.DEV && (
-                            <A href="/dict">
-                                <Button variant={"link"}>Dict</Button>
-                            </A>
+                <Show when={screen.mobile && !screen.lg}>
+                    <Drawer>
+                        {(props) => (
+                            <>
+                                <DrawerTrigger
+                                    as={Button}
+                                    variant={"secondary"}
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M4 6h16M4 12h16m-7 6h7"
+                                        />
+                                    </svg>
+                                </DrawerTrigger>
+                                <DrawerContent>
+                                    <HeaderButtons />
+                                </DrawerContent>
+                            </>
                         )}
-                        <A href="#work">
-                            <Button variant={"link"}>
-                                {t("buttons.work")}
-                            </Button>
-                        </A>
-                        <A href="#skills">
-                            <Button variant={"link"}>
-                                {t("buttons.skills")}
-                            </Button>
-                        </A>
-                        <A href="#about">
-                            <Button variant={"link"}>
-                                {t("buttons.about")}
-                            </Button>
-                        </A>
-                        <A href="#contact">
-                            <Button variant={"link"}>
-                                {t("buttons.contact")}
-                            </Button>
-                        </A>
-                        <SelectLang />
-                    </div>
+                    </Drawer>
+                </Show>
+                <Show when={screen.lg}>
+                    <HeaderButtons />
                 </Show>
             </div>
+        </div>
+    );
+}
+
+function HeaderButtons() {
+    const screen = breakPoints;
+
+    const drawer = useDialogContext();
+    const variant = screen.lg ? "link" : "secondary";
+    const onClick = () => (screen.lg ? null : drawer.setOpen(false));
+
+    return (
+        <div class="py-10 lg:py-0 flex flex-col lg:flex-row items-center gap-5 justify-end min-w-[35%]">
+            {import.meta.env.DEV && (
+                <A href="/dict" onClick={onClick}>
+                    <Button variant={variant}>Dict</Button>
+                </A>
+            )}
+            <A href="#work" onClick={onClick}>
+                <Button variant={variant}>{t("buttons.work")}</Button>
+            </A>
+            <A href="#skills" onClick={onClick}>
+                <Button variant={variant}>{t("buttons.skills")}</Button>
+            </A>
+            <A href="#about" onClick={onClick}>
+                <Button variant={variant}>{t("buttons.about")}</Button>
+            </A>
+            <A href="#contact" onClick={onClick}>
+                <Button variant={variant}>{t("buttons.contact")}</Button>
+            </A>
+            <SelectLang />
         </div>
     );
 }
