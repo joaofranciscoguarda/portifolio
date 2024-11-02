@@ -9,8 +9,8 @@ export const dict = {
         message: "Mensaje",
     },
     buttons: {
-        work: "Trabajo",
-        about: "Acerca de",
+        work: "Trabajos",
+        about: "De mí",
         skills: "Habilidades", //corrgir
         contact: "Contacto",
         submit: "Enviar",

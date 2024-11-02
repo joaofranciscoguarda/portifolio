@@ -9,7 +9,6 @@ import {
     DrawerContent,
     DrawerTrigger,
     useDialogContext,
-    useDrawerContext,
 } from "@/components/ui/drawer";
 
 export function BaseHeader() {
@@ -25,32 +24,25 @@ export function BaseHeader() {
                 </A>
                 <Show when={screen.mobile && !screen.lg}>
                     <Drawer>
-                        {(props) => (
-                            <>
-                                <DrawerTrigger
-                                    as={Button}
-                                    variant={"secondary"}
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="h-6 w-6"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M4 6h16M4 12h16m-7 6h7"
-                                        />
-                                    </svg>
-                                </DrawerTrigger>
-                                <DrawerContent>
-                                    <HeaderButtons />
-                                </DrawerContent>
-                            </>
-                        )}
+                        <DrawerTrigger as={Button} variant={"secondary"}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"
+                                />
+                            </svg>
+                        </DrawerTrigger>
+                        <DrawerContent>
+                            <HeaderButtons />
+                        </DrawerContent>
                     </Drawer>
                 </Show>
                 <Show when={screen.lg}>
