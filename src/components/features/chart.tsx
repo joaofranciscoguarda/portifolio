@@ -1,11 +1,11 @@
 import { onMount } from "solid-js";
 
-interface SkillsGraphProps {
-    data: {
-        points: number;
-        icon: string;
-    }[];
-}
+// interface SkillsGraphProps {
+//     data: {
+//         points: number;
+//         icon: string;
+//     }[];
+// }
 
 export function Radar() {
     let svgRef: SVGSVGElement;

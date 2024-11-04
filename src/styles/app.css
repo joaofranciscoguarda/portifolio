@@ -16,7 +16,7 @@
     body {
         @apply text-foreground overflow-x-hidden
         min-h-[100dvh] from-[#0a0702] from-[50%]
-        to-[#272727] to-[84%] bg-gradient-to-br pb-64;
+        to-[#272727] to-[84%] bg-gradient-to-br;
     }
 
     h1 {

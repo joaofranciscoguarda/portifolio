@@ -1,13 +1,13 @@
 import { cn } from "@/utils/cn";
-import { ParentProps, JSX } from "solid-js";
+import { ParentProps, ComponentProps } from "solid-js";
 
 export function HomeSection({
     children,
-    class: className,
+    class: _class,
     ...rest
-}: ParentProps & JSX.HTMLElementTags["div"]) {
+}: { id?: String } & ParentProps & ComponentProps<"div">) {
     return (
-        <div class={cn("pt-24", className)} {...rest}>
+        <div class={cn("pt-24 min-h-[100dvh]", _class)} {...rest}>
             {children}
         </div>
     );

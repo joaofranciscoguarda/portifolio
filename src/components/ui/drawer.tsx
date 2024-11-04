@@ -19,9 +19,6 @@ type drawerContentProps<T extends ValidComponent = "div"> = ParentProps<
     }
 >;
 
-export const useDrawerContext = DrawerPrimitive.useContext;
-export const useDialogContext = DrawerPrimitive.useDialogContext;
-
 export const DrawerContent = <T extends ValidComponent = "div">(
     props: DynamicProps<T, drawerContentProps<T>>,
 ) => {
