@@ -6,27 +6,25 @@ export function AboutMe() {
     const { t } = useTranslation();
 
     return (
-        <HomeSection id="about">
+        <HomeSection id="about" class="gap-10 lg:gap-20">
             <h2>{t("aboutMe.head")}</h2>
-            <div class="flex flex-col lg:flex-row">
-                <div class="w-1/2 lg:w-1/3">
-                    <img
-                        src="/images/me.jpg"
-                        alt="Me"
-                        class="rounded-lg shadow-lg"
-                    />
-                </div>
-                <div>
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
+                <img
+                    src="src/assets/photos/me.png"
+                    alt="Me"
+                    class="rounded-lg shadow-lg max-w-[min(100%,450px)]"
+                />
+                <div class="flex flex-col gap-5">
                     <h3
                         innerHTML={t("aboutMe.heading", {
                             location: myLocation,
                         })}
                     />
-                    <div>
+                    <p class="text-grey-100">
                         {t("aboutMe.text", {
                             location: myLocation,
                         })}
-                    </div>
+                    </p>
                 </div>
             </div>
         </HomeSection>

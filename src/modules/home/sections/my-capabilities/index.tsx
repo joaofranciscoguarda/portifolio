@@ -6,7 +6,7 @@ export function MyCapabilities() {
     const { t } = useTranslation();
 
     return (
-        <HomeSection class="mt-24" id="skills">
+        <HomeSection id="skills">
             <div class="flex flex-col items-center">
                 <h2>{t("myCapabilities.head")}</h2>
                 <p>{t("myCapabilities.headSub")}</p>

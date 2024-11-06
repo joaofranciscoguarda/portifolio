@@ -10,6 +10,7 @@ export function Home() {
             <MyCapabilities />
             <AboutMe />
             <Contact />
+            <p class="text-sm mb-20">© 2024 João Francisco</p>
         </>
     );
 }

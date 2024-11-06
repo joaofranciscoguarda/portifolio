@@ -35,11 +35,12 @@ export const dict = {
         head: "Sobre mí",
         heading:
             "Soy un desarrollador fullstack basado en {{location}}.<br> Tengo formación en Contabilidad.",
-        text: "Soy un desarrollador Fullstack basado en {{location}}, buscando soluciones curiosas y orientadas al futuro. Tengo formación en Contabilidad. Me gusta enfocarme en código simple, legible y duradero. Actualmente, estoy explorando el mundo de Laravel/PHP en el back-end, porque recibí buenas recomendaciones de un colega para aprender cómo maneja estructuras grandes y complejas en el back-end. En el front-end, SolidJs, porque me gusta mucho cómo funciona y parece ser el próximo React, usa JSX pero no tiene los inconvenientes de React. Cuando no estoy programando, soy esposo, un buen lector y jugador de videojuegos (como todo desarrollador).",
+        texto: "Soy un desarrollador Fullstack basado en {{location}}, en busca de soluciones curiosas y orientadas al futuro. Tengo formación en Contabilidad. Me gusta centrarme en código simple, legible y duradero. Actualmente, estoy explorando el mundo de Laravel/PHP en el back-end, como me sugirió un colega sénior. El propósito es aprender cómo maneja estructuras de back-end grandes y complejas. En el front-end, estoy explorando SolidJS, que me gusta mucho cómo funciona, usa JSX pero sin las desventajas de React. Para mí, parece ser el próximo React. Cuando no estoy programando, soy esposo, buen lector y jugador de videojuegos (como todo desarrollador).",
     },
     letsContact: {
+        head: "Contáctame",
         sayHello:
-            "Saluda en {{email}} <br> Para más información, aquí está mi currículum",
+            "Saluda en <a href='mailto:{{email}}' style='color:#FCBC26;'>{{email}}</a> <br> Para más información, aquí está mi currículum",
     },
     myExperience: {},
 };
