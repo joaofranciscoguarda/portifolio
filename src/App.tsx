@@ -1,8 +1,7 @@
-import { Show, Suspense } from "solid-js";
 import { Router } from "@solidjs/router";
 // import { ColorModeProvider, ColorModeScript } from "@kobalte/core";
 import { routes } from "./router/routes";
-import { dictInUse } from "./i18n";
+import { TranslationProvider } from "./context/i18n";
 
 function App() {
     return (
@@ -12,9 +11,9 @@ function App() {
             <Router
                 root={(props) => {
                     return (
-                        <Suspense>
-                            <Show when={dictInUse()}>{props.children}</Show>
-                        </Suspense>
+                        <TranslationProvider>
+                            {props.children}
+                        </TranslationProvider>
                     );
                 }}
             >

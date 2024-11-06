@@ -1,12 +1,13 @@
-import { t } from "@/i18n";
 import { A } from "@solidjs/router";
 import { Button } from "@/components/ui/button";
 import { SelectLang } from "@/components/features/select-lang";
 import { breakPoints } from "@/hooks";
 import { Show } from "solid-js";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { useTranslation } from "@/context/i18n";
 
 export function BaseHeader() {
+    const { t } = useTranslation();
     const screen = breakPoints;
 
     return (
@@ -60,6 +61,7 @@ interface HeaderButtonsProps {
 }
 
 function HeaderButtons({ drawer }: HeaderButtonsProps) {
+    const { t } = useTranslation();
     const screen = breakPoints;
     const variant = screen.lg ? "link" : "secondary";
     const onClick = () => (screen.lg ? null : drawer?.setOpen(false));

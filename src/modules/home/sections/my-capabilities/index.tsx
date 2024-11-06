@@ -1,8 +1,10 @@
 // import { Radar } from "@/components/features/chart";
-import { t } from "@/i18n";
+import { useTranslation } from "@/context/i18n";
 import { HomeSection } from "../../components";
 
 export function MyCapabilities() {
+    const { t } = useTranslation();
+
     return (
         <HomeSection class="mt-24" id="skills">
             <div class="flex flex-col items-center">

@@ -1,8 +1,10 @@
-import { t } from "@/i18n";
 import { myLocation } from "@/utils/variables";
 import { HomeSection } from "../../components";
+import { useTranslation } from "@/context/i18n";
 
 export function AboutMe() {
+    const { t } = useTranslation();
+
     return (
         <HomeSection id="about">
             <h2>{t("aboutMe.head")}</h2>

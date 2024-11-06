@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui";
+import { useTranslation } from "@/context/i18n";
 import { breakPoints } from "@/hooks";
-import { t } from "@/i18n";
 import { A } from "@solidjs/router";
 
 export function HiIm() {
+    const { t } = useTranslation();
     const screen = breakPoints;
 
     return (

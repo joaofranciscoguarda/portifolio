@@ -1,4 +1,4 @@
-import { setLocale, t, locale } from "@/i18n";
+import { useTranslation } from "@/context/i18n";
 import {
     Select,
     SelectContent,
@@ -9,6 +9,8 @@ import {
 import { Locale } from "@/plugins/i18n";
 
 export function SelectLang() {
+    const { t, setLocale, locale } = useTranslation();
+
     return (
         <Select<Locale>
             class="border-accent border-[1px] rounded-md text-primary"
