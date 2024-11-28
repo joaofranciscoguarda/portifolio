@@ -8,7 +8,7 @@ export function HomeSection({
 }: { id?: String } & ParentProps & ComponentProps<"div">) {
     return (
         <div
-            class={cn("flex flex-col pt-24 min-h-[100dvh] px-4", _class)}
+            class={cn("flex flex-col pt-24 min-h-[60dvh] px-4", _class)}
             {...rest}
         >
             {children}

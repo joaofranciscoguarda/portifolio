@@ -1,6 +1,7 @@
 import { myLocation } from "@/utils/variables";
 import { HomeSection } from "../../components";
 import { useTranslation } from "@/context/i18n";
+import me from "@/assets/photos/me.png";
 
 export function AboutMe() {
     const { t } = useTranslation();
@@ -10,7 +11,7 @@ export function AboutMe() {
             <h2>{t("aboutMe.head")}</h2>
             <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
                 <img
-                    src="src/assets/photos/me.png"
+                    src={me}
                     alt="Me"
                     class="rounded-lg shadow-lg max-w-[min(100%,450px)]"
                 />

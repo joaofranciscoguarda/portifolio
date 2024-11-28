@@ -73,11 +73,11 @@ function HeaderButtons({ drawer }: HeaderButtonsProps) {
                     <Button variant={variant}>Dict</Button>
                 </A>
             )}
-            <A href="#work" onClick={onClick}>
-                <Button variant={variant}>{t("buttons.work")}</Button>
-            </A>
             <A href="#skills" onClick={onClick}>
                 <Button variant={variant}>{t("buttons.skills")}</Button>
+            </A>
+            <A href="#work" onClick={onClick}>
+                <Button variant={variant}>{t("buttons.work")}</Button>
             </A>
             <A href="#about" onClick={onClick}>
                 <Button variant={variant}>{t("buttons.about")}</Button>

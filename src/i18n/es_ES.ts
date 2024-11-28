@@ -37,6 +37,15 @@ export const dict = {
             "Soy un desarrollador fullstack basado en {{location}}.<br> Tengo formación en Contabilidad.",
         texto: "Soy un desarrollador Fullstack basado en {{location}}, en busca de soluciones curiosas y orientadas al futuro. Tengo formación en Contabilidad. Me gusta centrarme en código simple, legible y duradero. Actualmente, estoy explorando el mundo de Laravel/PHP en el back-end, como me sugirió un colega sénior. El propósito es aprender cómo maneja estructuras de back-end grandes y complejas. En el front-end, estoy explorando SolidJS, que me gusta mucho cómo funciona, usa JSX pero sin las desventajas de React. Para mí, parece ser el próximo React. Cuando no estoy programando, soy esposo, buen lector y jugador de videojuegos (como todo desarrollador).",
     },
+    works: {
+        head: "Experiencia Laboral",
+        khiza: {
+            title: "Khiza DAO",
+            position: "Full Stack Developer",
+            startAt: "22 Feb 2022",
+            endAt: "31 Dic 2024",
+        },
+    },
     letsContact: {
         head: "Contáctame",
         sayHello:
