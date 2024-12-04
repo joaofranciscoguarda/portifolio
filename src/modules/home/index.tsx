@@ -1,5 +1,5 @@
 import { Hero } from "./sections/hero";
-import { MyCapabilities } from "./sections/my-capabilities";
+// import { MyCapabilities } from "./sections/my-capabilities";
 import { AboutMe } from "./sections/about-me";
 import { Contact } from "./sections/contact";
 import { WorkExp } from "./sections/work-exp";
@@ -8,7 +8,7 @@ export function Home() {
     return (
         <>
             <Hero />
-            <MyCapabilities />
+            {/* <MyCapabilities /> */}
             <WorkExp />
             <AboutMe />
             <Contact />

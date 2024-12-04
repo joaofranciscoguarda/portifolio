@@ -49,7 +49,9 @@ export const dict = {
     letsContact: {
         head: "Contáctame",
         sayHello:
-            "Saluda en <a href='mailto:{{email}}' style='color:#FCBC26;'>{{email}}</a> <br> Para más información, aquí está mi currículum",
+            "Saluda en <a href='mailto:{{email}}' style='color:#FCBC26;'>{{email}}</a>",
+        hereResume:
+            "Para más información, aquí está <a href={{curriculum}} target='_blank' style='color:#FCBC26;'> mi currículum</a>.",
     },
     myExperience: {},
 };
