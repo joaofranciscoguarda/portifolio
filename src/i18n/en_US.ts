@@ -41,9 +41,10 @@ export const dict = {
         head: "Work Experience",
         khiza: {
             title: "Khiza DAO",
-            position: "Full Stack Developer",
-            startAt: "22 Feb 2022",
-            endAt: "31 Dec 2024",
+            position: "Web3 Full Stack Developer",
+            startsAt: "22 Feb 2022",
+            endsAt: "31 Dec 2024",
+            timeDiff: "~2 years",
         },
     },
     letsContact: {
