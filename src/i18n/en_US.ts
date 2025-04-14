@@ -42,15 +42,22 @@ export const dict = {
         khiza: {
             title: "Khiza DAO",
             position: "Web3 Full Stack Developer",
-            startsAt: "22 Feb 2022",
-            endsAt: "31 Dec 2024",
+            startsAt: "Feb 22 2023",
+            endsAt: "Dec 31 2024",
             timeDiff: "~2 years",
+        },
+        psyze: {
+            title: "Psyze",
+            position: "Tech Lead",
+            startsAt: "Jan 6 2025",
+            endsAt: "Now",
         },
     },
     letsContact: {
         head: "Let's contact",
         sayHello:
             "Say hello at <a href='mailto:{{email}}' style='color:#FCBC26;'>{{email}}</a>",
+        orCall: "Or call me <a href='tel:{{phone}}' style='color:#FCBC26;'>{{phone}}</a>",
         hereResume:
             "For more information, here's <a href={{curriculum}} target='_blank' style='color:#FCBC26;'> my resume</a>.",
     },

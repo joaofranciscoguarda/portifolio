@@ -1,6 +1,6 @@
 import { useTranslation } from "@/context/i18n";
 import { HomeSection } from "../../components";
-import { myEmail } from "@/utils/variables";
+import { myEmail, myPhone } from "@/utils/variables";
 import cv from "/cv-joaofrancisco.pdf";
 
 export function Contact() {
@@ -13,6 +13,11 @@ export function Contact() {
                     <p
                         innerHTML={t("letsContact.sayHello", {
                             email: myEmail,
+                        })}
+                    />
+                    <p
+                        innerHTML={t("letsContact.orCall", {
+                            phone: myPhone,
                         })}
                     />
                     <p

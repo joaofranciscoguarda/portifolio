@@ -11,6 +11,13 @@ export function WorkExp() {
                 <h2>{t("works.head")}</h2>
                 <div class="mt-20 flex flex-col gap-10 w-full">
                     <JobCard
+                        title={t("works.psyze.title")}
+                        position={t("works.psyze.position")}
+                        link="https://psyze.com"
+                        startsAt={t("works.psyze.startsAt")}
+                        endsAt={t("works.psyze.endsAt")}
+                    ></JobCard>
+                    <JobCard
                         title={t("works.khiza.title")}
                         position={t("works.khiza.position")}
                         link="https://khizadao.com"

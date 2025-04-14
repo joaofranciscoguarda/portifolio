@@ -12,7 +12,7 @@ export function Home() {
             <WorkExp />
             <AboutMe />
             <Contact />
-            <p class="text-sm mb-20 text-center">© 2024 João Francisco</p>
+            <p class="text-sm mb-20 text-center">© 2025 João Francisco</p>
         </>
     );
 }

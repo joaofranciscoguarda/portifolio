@@ -13,15 +13,16 @@ interface JobCardProps extends ParentProps {
 export function JobCard(props: JobCardProps) {
     return (
         <GlassCard>
-            <a href={props.link} target="_blank" class="text-h3 text-primary">
+            <a href={props.link} target="_blank" class="text-h3 text-primary ">
                 {props.title}
             </a>
             <p class="text-accent">{props.position}</p>
-            <div class="flex items-center gap-2">
-                <p>
+            <div class="flex items-center justify-center gap-2">
+                <p class="text-sm">
                     {props.startsAt} {" -> "} {props.endsAt}
                 </p>
-                <p class="text-sm">({props.timeDiff})</p>
+
+                {props.timeDiff && <p class="text-xs">({props.timeDiff})</p>}
             </div>
         </GlassCard>
     );
