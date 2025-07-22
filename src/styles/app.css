@@ -1,70 +1,254 @@
 @import "fonts.css";
-@import "colors.css";
-@import "typography.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@plugin 'tailwindcss-animate';
 
-@layer base {
-    html {
-        @apply scroll-smooth;
-    }
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply text-foreground overflow-x-hidden
-        min-h-[100dvh] from-[#0a0702] from-[50%]
-        to-[#272727] to-[84%] bg-gradient-to-br;
+@source '../**/*.{ts,tsx,html}';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Line clamp utilities */
+@layer utilities {
+    .line-clamp-1 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
     }
 
-    h1 {
-        @apply text-h1;
+    .line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
     }
-    h2 {
-        @apply text-h2;
+
+    .line-clamp-3 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
     }
-    h3 {
-        @apply text-h3;
-    }
-    p {
-        @apply text-p;
-    }
-    a {
-        @apply text-p;
-    }
-    .container {
-        @apply overflow-hidden sm:px-[2rem];
+
+    /* Custom animation utilities */
+    .animate-caret-blink {
+        animation: caret-blink 1.25s ease-out infinite;
     }
 }
 
-@keyframes rotate {
+@theme {
+    /* ─── COLORS ─────────────────────────────────── */
+    --color-border: hsl(220 13% 91%);
+    --color-input: hsl(220 13% 91%);
+    --color-ring: hsl(220 13% 91%);
+    --color-background: hsl(0 0% 100%);
+    --color-foreground: hsl(220 13% 13%);
+
+    /* Primary */
+    --color-primary: hsl(180 25% 25%);
+    --color-primary-foreground: hsl(0 0% 100%);
+
+    /* Secondary */
+    --color-secondary: hsl(220 13% 91%);
+    --color-secondary-foreground: hsl(220 13% 13%);
+
+    /* Destructive */
+    --color-destructive: hsl(0 84% 60%);
+    --color-destructive-foreground: hsl(0 0% 100%);
+
+    /* Muted */
+    --color-muted: hsl(220 13% 96%);
+    --color-muted-foreground: hsl(220 13% 45%);
+
+    /* Accent */
+    --color-accent: hsl(220 13% 91%);
+    --color-accent-foreground: hsl(220 13% 13%);
+
+    /* Popover */
+    --color-popover: hsl(0 0% 100%);
+    --color-popover-foreground: hsl(220 13% 13%);
+
+    /* Card */
+    --color-card: hsl(0 0% 100%);
+    --color-card-foreground: hsl(220 13% 13%);
+
+    /* Grey scale from config */
+    --color-grey-100: hsl(220 13% 96%);
+    --color-grey-200: hsl(220 13% 91%);
+    --color-grey-300: hsl(220 13% 86%);
+    --color-grey-400: hsl(220 13% 69%);
+    --color-grey-500: hsl(220 13% 45%);
+    --color-grey-600: hsl(220 13% 35%);
+    --color-grey-700: hsl(220 13% 25%);
+    --color-grey-800: hsl(220 13% 15%);
+    --color-grey-900: hsl(220 13% 9%);
+
+    /* Yellow palette from config */
+    --color-yellow-400: hsl(48 96% 68%);
+    --color-yellow-500: hsl(48 96% 53%);
+    --color-yellow-600: hsl(45 93% 47%);
+    --color-yellow-700: hsl(41 96% 40%);
+    --color-yellow-800: hsl(35 91% 33%);
+    --color-yellow-900: hsl(28 73% 26%);
+
+    /* ─── TYPOGRAPHY ─────────────────────────────── */
+    --font-sans: "Manrope", sans-serif;
+    --font-default: "Manrope", sans-serif;
+    --font-bebas: "Bebas Neue", sans-serif;
+
+    /* ─── SPACING & SIZING ─────────────────────────── */
+    --container-center: true;
+    --container-2xl: 1440px;
+
+    /* ─── BORDER RADIUS ─────────────────────────────── */
+    --radius: 0.5rem;
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    /* ─── ANIMATIONS ─────────────────────────────── */
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-collapsible-down: collapsible-down 0.2s ease-out;
+    --animate-collapsible-up: collapsible-up 0.2s ease-out;
+    --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+}
+
+@keyframes accordion-down {
     from {
-        transform: rotate(0deg);
+        height: 0;
     }
     to {
-        transform: rotate(360deg);
+        height: var(--kb-accordion-content-height);
     }
 }
 
-.grid-line {
-    stroke: #464646;
-    fill: none;
+@keyframes accordion-up {
+    from {
+        height: var(--kb-accordion-content-height);
+    }
+    to {
+        height: 0;
+    }
 }
 
-.axis {
-    stroke: #464646;
+@keyframes collapsible-down {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--kb-collapsible-content-height);
+    }
 }
-.data-line {
-    stroke: #fcbd27;
-    fill: none;
+
+@keyframes collapsible-up {
+    from {
+        height: var(--kb-collapsible-content-height);
+    }
+    to {
+        height: 0;
+    }
 }
-.data-point {
-    fill: #fcbd27;
+
+@keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+        opacity: 1;
+    }
+    20%,
+    50% {
+        opacity: 0;
+    }
 }
-.data-label {
-    fill: white;
-    font-size: 10px;
-    text-anchor: middle;
+
+/*
+  Base border compatibility for Tailwind CSS v4
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-grey-200);
+    }
+}
+
+:root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+
+    /* Grey scale variables */
+    --grey-100: var(--color-grey-100);
+    --grey-200: var(--color-grey-200);
+    --grey-300: var(--color-grey-300);
+    --grey-400: var(--color-grey-400);
+    --grey-500: var(--color-grey-500);
+    --grey-600: var(--color-grey-600);
+    --grey-700: var(--color-grey-700);
+    --grey-800: var(--color-grey-800);
+    --grey-900: var(--color-grey-900);
+
+    /* Yellow scale variables */
+    --yellow-400: var(--color-yellow-400);
+    --yellow-500: var(--color-yellow-500);
+    --yellow-600: var(--color-yellow-600);
+    --yellow-700: var(--color-yellow-700);
+    --yellow-800: var(--color-yellow-800);
+    --yellow-900: var(--color-yellow-900);
+}
+
+.dark {
+    --color-background: hsl(220 13% 9%);
+    --color-foreground: hsl(0 0% 100%);
+    --color-muted: hsl(220 13% 15%);
+    --color-muted-foreground: hsl(220 13% 65%);
+    --color-border: hsl(220 13% 25%);
+    --color-input: hsl(220 13% 25%);
+    --color-card: hsl(220 13% 13%);
+    --color-card-foreground: hsl(0 0% 100%);
+    --color-popover: hsl(220 13% 13%);
+    --color-popover-foreground: hsl(0 0% 100%);
+    --color-accent: hsl(220 13% 25%);
+    --color-accent-foreground: hsl(0 0% 100%);
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+        border-color: var(--border);
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: var(--font-default);
+        line-height: 1.5;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-bebas);
+    }
 }
