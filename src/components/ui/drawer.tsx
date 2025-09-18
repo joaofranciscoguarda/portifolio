@@ -16,6 +16,7 @@ export const DrawerClose = DrawerPrimitive.Close;
 type drawerContentProps<T extends ValidComponent = "div"> = ParentProps<
     ContentProps<T> & {
         class?: string;
+        side?: "bottom" | "left" | "right";
     }
 >;
 
@@ -25,8 +26,10 @@ export const DrawerContent = <T extends ValidComponent = "div">(
     const [local, rest] = splitProps(props as drawerContentProps, [
         "class",
         "children",
+        "side",
     ]);
     const ctx = DrawerPrimitive.useContext();
+    const side = local.side || "bottom";
 
     return (
         <DrawerPrimitive.Portal>
@@ -38,12 +41,18 @@ export const DrawerContent = <T extends ValidComponent = "div">(
             />
             <DrawerPrimitive.Content
                 class={cn(
-                    "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-xl border bg-background after:absolute after:inset-x-0 after:top-full after:h-[50%] after:bg-inherit data-[transitioning]:transition-transform data-[transitioning]:duration-200 md:select-none",
+                    side === "left"
+                        ? "fixed inset-y-0 left-0 z-50 h-full w-80 max-w-[90vw] flex flex-col rounded-r-xl border bg-background data-[transitioning]:transition-transform data-[transitioning]:duration-200 md:w-96"
+                        : side === "right"
+                          ? "fixed inset-y-0 right-0 z-50 h-full w-80 max-w-[90vw] flex flex-col rounded-l-xl border bg-background data-[transitioning]:transition-transform data-[transitioning]:duration-200 md:w-96"
+                          : "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-xl border bg-background after:absolute after:inset-x-0 after:top-full after:h-[50%] after:bg-inherit data-[transitioning]:transition-transform data-[transitioning]:duration-200 md:select-none",
                     local.class,
                 )}
                 {...rest}
             >
-                <div class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+                {side === "bottom" && (
+                    <div class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+                )}
                 {local.children}
             </DrawerPrimitive.Content>
         </DrawerPrimitive.Portal>
@@ -91,6 +100,9 @@ export const DrawerLabel = <T extends ValidComponent = "h2">(
         />
     );
 };
+
+// Alias DrawerTitle to DrawerLabel for compatibility
+export const DrawerTitle = DrawerLabel;
 
 type DrawerDescriptionProps = DescriptionProps & {
     class?: string;

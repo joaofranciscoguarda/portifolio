@@ -15,6 +15,11 @@ export const dict = {
         contact: "Contato",
         submit: "Enviar",
         contactMe: "Contate-me",
+        buyMeCoffee: "Me pague um café",
+        connectWallet: "Conectar Carteira",
+        sendDonation: "Enviar Doação",
+        disconnect: "Desconectar",
+        close: "Fechar",
     },
     hero: {
         hi: "Oi, eu sou",
@@ -61,4 +66,28 @@ export const dict = {
             "Para mais informações, aqui está <a href={{curriculum}} target='_blank' style='color:#FCBC26;'> meu currículo</a>.",
     },
     myExperience: {},
+    donation: {
+        title: "Me pague um café",
+        subtitle: "Apoie meu trabalho",
+        description:
+            "Se você gosta do meu trabalho e quer me apoiar, pode enviar uma doação para minha carteira Polygon. Toda contribuição me ajuda a continuar criando!",
+        walletAddress: "Meu Endereço da Carteira:",
+        copyAddress: "Copiar Endereço",
+        connectWalletToSend:
+            "Conecte sua carteira para enviar uma doação diretamente",
+        amountPlaceholder: "Valor em MATIC",
+        sending: "Enviando...",
+        success: "Doação enviada com sucesso! Obrigado! 🎉",
+        error: "Falha ao enviar doação. Tente novamente.",
+        walletNotConnected: "Por favor, conecte sua carteira primeiro",
+        invalidAmount: "Por favor, insira um valor válido",
+        switchToPolygon: "Trocar para Rede Polygon",
+        installMetaMask:
+            "Por favor, instale o MetaMask para conectar sua carteira",
+        connecting: "Conectando...",
+        balance: "Saldo:",
+        selectToken: "Selecionar Token:",
+        thankYou: "Obrigado pelo seu apoio! 🙏",
+        supportMessage: "Sua generosidade significa muito para mim!",
+    },
 };

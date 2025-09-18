@@ -2,10 +2,14 @@ import { Button } from "@/components/ui";
 import { useTranslation } from "@/context/i18n";
 import { breakPoints } from "@/hooks";
 import { A } from "@solidjs/router";
+import { createSignal } from "solid-js";
+import { DonationModal, Icon, ThankYouScreen } from "@/components/features";
 
 export function HiIm() {
     const { t } = useTranslation();
     const screen = breakPoints;
+    const [showDonationModal, setShowDonationModal] = createSignal(false);
+    const [showThankYou, setShowThankYou] = createSignal(false);
 
     return (
         <div
@@ -19,15 +23,38 @@ export function HiIm() {
                     </h1>
                     <p>{t("hero.andIm")}</p>
                 </div>
-                <div class="flex">
+                <div class="flex flex-col sm:flex-row gap-4">
                     <A href="#contact">
                         <Button size="xl" class="gap-3">
                             {t("buttons.contactMe")?.toLocaleUpperCase()}
                             <div class="w-2 h-2 bg-background rounded-full" />
                         </Button>
                     </A>
+                    <Button
+                        size="xl"
+                        variant="outline"
+                        class="gap-3"
+                        onClick={() => setShowDonationModal(true)}
+                    >
+                        <Icon icon="coffee" class="w-5 h-5" />
+                        {t("buttons.buyMeCoffee")?.toLocaleUpperCase()}
+                    </Button>
                 </div>
             </div>
+
+            <DonationModal
+                isOpen={showDonationModal()}
+                onClose={() => setShowDonationModal(false)}
+                onDonationSuccess={() => {
+                    setShowDonationModal(false);
+                    setShowThankYou(true);
+                }}
+            />
+
+            <ThankYouScreen
+                isVisible={showThankYou()}
+                onComplete={() => setShowThankYou(false)}
+            />
         </div>
     );
 }

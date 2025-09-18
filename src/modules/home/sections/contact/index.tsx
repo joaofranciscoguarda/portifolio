@@ -1,7 +1,7 @@
 import { useTranslation } from "@/context/i18n";
 import { HomeSection } from "../../components";
 import { myEmail, myPhone } from "@/utils/variables";
-import cv from "/cv-joaofrancisco.pdf";
+import cv from "/Joao_F_G_Pozzer_CV.pdf";
 
 export function Contact() {
     const { t } = useTranslation();

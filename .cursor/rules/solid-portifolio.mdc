@@ -1,0 +1,12 @@
+---
+globs: *.tsx,*.ts
+alwaysApply: false
+---
+
+Project: Solid.js Portifolio.
+
+Package manager: pnpm.
+
+Using i18n for translation in @src/i18n folder.
+
+Using tailwind css v3.4.10.
