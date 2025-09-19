@@ -8,7 +8,7 @@ import { onMount } from "solid-js";
 // }
 
 export function Radar() {
-    let svgRef: SVGSVGElement;
+    let svgRef: SVGSVGElement | undefined;
 
     const numLevels = 10; // Number of levels (from 1 to 10)
     const totalRadius = 70; // Total radius of the radar chart
@@ -24,6 +24,7 @@ export function Radar() {
     ];
 
     const drawRadarChart = () => {
+        if (!svgRef) return;
         const svg = svgRef;
 
         // Clear any previous drawings
