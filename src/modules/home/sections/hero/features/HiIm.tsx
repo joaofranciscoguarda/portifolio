@@ -2,7 +2,7 @@ import { Button } from "@/components/ui";
 import { useTranslation } from "@/context/i18n";
 import { breakPoints } from "@/hooks";
 import { A } from "@solidjs/router";
-import { createSignal } from "solid-js";
+import { createSignal, createMemo } from "solid-js";
 import { DonationModal, Icon, ThankYouScreen } from "@/components/features";
 
 export function HiIm() {
@@ -11,10 +11,14 @@ export function HiIm() {
     const [showDonationModal, setShowDonationModal] = createSignal(false);
     const [showThankYou, setShowThankYou] = createSignal(false);
 
+    // Memoize mobile condition and classes for better performance
+    const isMobile = createMemo(() => screen.mobile && !screen.md);
+    const containerClass = createMemo(
+        () => `md:w-[50%] ${isMobile() ? "mobile-overlay" : ""}`,
+    );
+
     return (
-        <div
-            class={`md:w-[50%] ${screen.mobile && !screen.md ? "absolute z-40 top-[17rem] backdrop-blur-sm drop-shadow-[0_20px_20px_rgba(255,255,255,0.05)] rounded-3xl p-6" : ""}`}
-        >
+        <div class={containerClass()}>
             <div class=" flex flex-col justify-center gap-10">
                 <div>
                     <p class="text-h1">{t("hero.hi")?.toUpperCase()}</p>
